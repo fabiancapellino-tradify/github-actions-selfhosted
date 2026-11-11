@@ -19,4 +19,4 @@ jobs:
 
       - name: Mostrar IP pública
         run: |
-          curl ifconfig.me
+          curl -s --connect-timeout 5 https://api.ipify.org || echo "No se pudo obtener IP"
