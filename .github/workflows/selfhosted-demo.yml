@@ -1,0 +1,22 @@
+name: Self Hosted Demo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  demo:
+    runs-on: self-hosted
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Mostrar información del sistema
+        run: |
+          echo "Runner conectado"
+          hostname
+          whoami
+          pwd
+
+      - name: Mostrar IP pública
+        run: |
+          curl ifconfig.me
